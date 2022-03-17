@@ -1,0 +1,159 @@
+.app__skills {  //makes the title appear above everything
+    flex: 1;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 300px
+  }
+  
+  .app__skills-container {  //puts icons in a row
+    width: 80%;
+    margin-top: 3rem;
+  
+    display: flex;
+    flex-direction: row;
+  
+    @media screen and (max-width: 900px) {  //for devices up to 900px
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+  
+  .app__skills-list {  //moves icon list to the left
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: auto;  //without this << it gave a huge gap if 5+ icons were listed
+  
+    margin-right: 5rem;
+  
+    @media screen and (max-width: 900px) {  //moves icons in the middle becuase of the lack of space
+      margin-right: 0;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  
+  .app__skills-item {  //spaces out icons
+    flex-direction: column;
+    text-align: center;
+  
+    margin: 1rem;
+  
+    transition: all 0.3s ease-in-out;
+  
+    div {   //creates circle background for icons
+      width: 90px;  
+      height: 90px;
+      border-radius: 50%;
+      background-color: #fef4f5;
+  
+      img {  //shrinks all icons to be placed inside white cicle
+        width: 50%;
+        height: 50%;
+      }
+  
+      &:hover {  //white 
+        box-shadow: 0 0 25px #fef4f5;
+      }
+  
+      @media screen and (min-width: 2000px) {  //for extra large devices. increases size of icons
+        width: 150px;
+        height: 150px;
+      }
+  
+      @media screen and (max-width: 450px) {  //for small devices.
+        width: 70px;
+        height: 70px;
+      }
+    }
+  
+    p {  //increases icon name font etc.
+      font-weight: 500;
+      margin-top: 0.5rem;
+    }
+  
+    @media screen and (min-width: 2000px) {
+      margin: 1rem 2rem;
+  
+      p {  //spaces out icons from 'skills & experience'
+        margin-top: 1rem;
+      }
+    }
+  }
+  
+  .app__skills-exp {  //
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  
+    @media screen and (max-width: 900px) {
+      margin-top: 2rem;
+    }
+  }
+  
+  .app__skills-exp-item {  //spaces out each experience
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 1rem 0;
+  }
+  
+  .app__skills-exp-works {
+    flex: 1;
+  
+    .app__skills-exp-work {  //makes 'name' & 'company' become vertical
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      cursor: pointer;
+  
+      h4 {
+        font-weight: 500;
+      }
+  
+      p {
+        font-weight: 400;
+        color: var(--gray-color);
+        margin-top: 5px;
+      }
+    }
+  }
+  
+  .app__skills-exp-year {  //styling year to be pushed to the left & give purple color
+    margin-right: 3rem;
+  
+    p {
+      font-weight: 800;
+      color: var(--secondary-color);
+    }
+  
+    @media screen and (max-width: 450px) {
+      margin-right: 1rem;
+    }
+  }
+  
+  .skills-tooltip {  //adding important (although not good practice) becuase we adding it to packages
+    max-width: 300px !important;
+    background-color: var(--white-color) !important;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 5px !important;
+    padding: 1rem !important;
+    color: var(--gray-color) !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
+    opacity: 1 !important;
+  
+    @media screen and (min-width: 2000px) {
+      font-size: 1.75rem !important;
+      max-width: 500px !important;
+      line-height: 2 !important;
+    }
+  }
